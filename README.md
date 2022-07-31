@@ -11,7 +11,7 @@ A place to buy/bid exclusive art work in realtime.
 
 ## Roadmap
 
-- [ ] setup lerna
+- [x] setup lerna
 - [ ] setup server
 - [ ] setup postgres database
   - [ ] setup docker-compose with pgadmin
