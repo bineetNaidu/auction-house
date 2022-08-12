@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=auction_house_db
+
+    ports:
+      - '5678:5432'
+    volumes:
+      - ./.db:/var/lib/postgresql/data
