@@ -3,9 +3,10 @@ import dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server';
 import { buildSchema } from 'type-graphql';
 import { HelloResolver } from './modules/Hello/hello.resolver';
-import { TweetResolvers } from './modules/Tweet/tweet.resolver';
 import { configuration } from './utils/configuration';
 import { AppDataSource } from './data-source';
+import { UserResolvers } from './modules/User/user.resolver';
+import { AuctionResolvers } from './modules/Auction/auction.resolver';
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ const bootstrap = async () => {
 
   const schema = await buildSchema({
     validate: false,
-    resolvers: [HelloResolver, TweetResolvers],
+    resolvers: [HelloResolver, UserResolvers, AuctionResolvers],
   });
 
   const server = new ApolloServer({
