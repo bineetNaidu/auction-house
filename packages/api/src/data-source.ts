@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Tweet } from './modules/Tweet/tweet.entity';
+import { User } from './modules/User/user.entity';
 import { configuration } from './utils/configuration';
 
 export const AppDataSource = new DataSource({
@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     configuration.environment === 'test' ||
     configuration.environment === 'development',
   logging: configuration.environment === 'development',
-  entities: [Tweet],
+  entities: [User],
   subscribers: [],
   migrations: [],
 });

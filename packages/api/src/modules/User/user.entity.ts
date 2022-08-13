@@ -8,20 +8,29 @@ import {
   Column,
 } from 'typeorm';
 
-@Entity()
+@Entity({
+  name: 'users',
+})
 @ObjectType()
-export class Tweet extends BaseEntity {
+export class User extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
   id: number;
 
   @Field()
   @Column()
-  body!: string;
+  name!: string;
+
+  @Field()
+  @Column({
+    unique: true,
+    length: 50,
+  })
+  googleId!: string;
 
   @Field()
   @Column()
-  username!: string;
+  avatar!: string;
 
   @Field()
   @CreateDateColumn()
