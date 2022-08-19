@@ -12,5 +12,5 @@ export const AppDataSource = new DataSource({
   logging: configuration.environment === 'development',
   entities: [User, Auction],
   subscribers: [],
-  migrations: [],
+  migrations: ['./migrations/*'],
 });

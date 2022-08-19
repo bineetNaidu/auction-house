@@ -25,6 +25,7 @@ export class User extends BaseEntity {
   @Column({
     unique: true,
     length: 50,
+    name: 'google_id',
   })
   googleId!: string;
 
@@ -33,10 +34,10 @@ export class User extends BaseEntity {
   avatar!: string;
 
   @Field()
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
   @Field()
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 }
