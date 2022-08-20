@@ -1,0 +1,9 @@
+mutation CreateAuction($input: CreateAuctionInput!) {
+  createAuction(input: $input) {
+    ...AuctionFragment
+    auctionOwner {
+      googleId
+      id
+    }
+  }
+}

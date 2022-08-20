@@ -1,0 +1,10 @@
+query GetAuction($getAuctionId: Float!) {
+  getAuction(id: $getAuctionId) {
+    ...AuctionFragment
+    auctionOwner {
+      id
+      name
+      avatar
+    }
+  }
+}

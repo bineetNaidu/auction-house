@@ -1,0 +1,10 @@
+query GetAuctionsList {
+  getAuctionsList {
+    ...AuctionFragment
+    auctionOwner {
+      id
+      name
+      avatar
+    }
+  }
+}

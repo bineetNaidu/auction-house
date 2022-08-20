@@ -1,0 +1,10 @@
+fragment AuctionFragment on Auction {
+  id
+  itemImage
+  itemName
+  startPrice
+  expirationDate
+  hasExpired
+  createdAt
+  updatedAt
+}
