@@ -12,20 +12,26 @@ A place to buy/bid exclusive art work in realtime.
 ## Roadmap
 
 - [x] setup lerna
-- [ ] setup server
-- [ ] setup postgres database
-  - [ ] setup docker-compose with pgadmin
+- [x] setup server
+- [x] setup postgres database
+  - [x] setup docker-compose with adminer
 - [ ] dockerize the server app
   - [ ] setup docker-compose for server
 - [ ] design the database
-  - [ ] User
-  - [ ] Inventory
-  - [ ] Auctions
+  - [x] User
+  - [x] Auctions
   - [ ] Bidders
+- [x] Add TypeORM migrations
 - [ ] add OAuth
-- [ ] setup web
-  - [ ] add sign in page
+- [] setup web
+  - [x] add TailwindCSS
+  - [x] add DaisyUI
+  - [x] add NextAuth
+  - [x] Add GraphQL client
+    - [x] setup graphql code gen
+    - [x] setup apollo graphql
+  - [x] add navbar
+  - [ ] user can view the list of available auction
+  - [ ] create auctions provided the user is logged in
   - [ ] add dashboard page
-- [ ] user can list auction
   - [ ] user can bid/buyout the auction
-- [ ] user can view the list of available auction
