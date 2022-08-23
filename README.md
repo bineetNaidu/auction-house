@@ -22,8 +22,8 @@ A place to buy/bid exclusive art work in realtime.
   - [x] Auctions
   - [ ] Bidders
 - [x] Add TypeORM migrations
-- [ ] add OAuth
 - [] setup web
+  - [x] add NextAuth
   - [x] add TailwindCSS
   - [x] add DaisyUI
   - [x] add NextAuth
@@ -31,7 +31,7 @@ A place to buy/bid exclusive art work in realtime.
     - [x] setup graphql code gen
     - [x] setup apollo graphql
   - [x] add navbar
-  - [ ] user can view the list of available auction
-  - [ ] create auctions provided the user is logged in
+  - [x] user can view the list of available auction
+  - [x] create auctions provided the user is logged in
   - [ ] add dashboard page
   - [ ] user can bid/buyout the auction
