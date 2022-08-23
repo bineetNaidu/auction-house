@@ -20,10 +20,9 @@ A place to buy/bid exclusive art work in realtime.
 - [ ] design the database
   - [x] User
   - [x] Auctions
-  - [ ] Bidders
-- [x] Add TypeORM migrations
+  - [x] Bidders
+- [ ] Add TypeORM migrations
 - [] setup web
-  - [x] add NextAuth
   - [x] add TailwindCSS
   - [x] add DaisyUI
   - [x] add NextAuth
@@ -33,5 +32,5 @@ A place to buy/bid exclusive art work in realtime.
   - [x] add navbar
   - [x] user can view the list of available auction
   - [x] create auctions provided the user is logged in
-  - [ ] add dashboard page
+  - [ ] add myAuctions page
   - [ ] user can bid/buyout the auction
