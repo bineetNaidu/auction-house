@@ -8,6 +8,7 @@ export class AuctionResolvers {
   @Query(() => [Auction])
   getAuctionsList(): Promise<Auction[]> {
     return Auction.find({
+      relations: ['auctionOwner'],
       where: {
         hasExpired: false,
       },
@@ -19,7 +20,7 @@ export class AuctionResolvers {
 
   @Query(() => Auction, { nullable: true })
   getAuction(@Arg('id') id: number): Promise<Auction | null> {
-    return Auction.findOne({ where: { id } });
+    return Auction.findOne({ where: { id }, relations: ['auctionOwner'] });
   }
 
   @Mutation(() => Auction)
