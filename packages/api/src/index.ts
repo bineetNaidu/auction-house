@@ -7,6 +7,7 @@ import { configuration } from './utils/configuration';
 import { AppDataSource } from './data-source';
 import { UserResolvers } from './modules/User/user.resolver';
 import { AuctionResolvers } from './modules/Auction/auction.resolver';
+import { BidResolvers } from './modules/Bids/bid.resolver';
 
 dotenv.config();
 
@@ -19,7 +20,7 @@ const bootstrap = async () => {
 
   const schema = await buildSchema({
     validate: false,
-    resolvers: [HelloResolver, UserResolvers, AuctionResolvers],
+    resolvers: [HelloResolver, UserResolvers, AuctionResolvers, BidResolvers],
   });
 
   const server = new ApolloServer({
