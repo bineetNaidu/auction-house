@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import { AuctionCard } from '../components/AuctionCard';
 import { CreateAuctionForm } from '../components/CreateAuctionForm';
@@ -7,6 +8,7 @@ import { Navbar } from '../components/Navbar';
 import { useGetAuctionsListQuery } from '../graphql/gen';
 
 const Home: NextPage = () => {
+  const { status } = useSession();
   const { data: auctionLists, loading, error } = useGetAuctionsListQuery();
   return (
     <>
@@ -19,8 +21,14 @@ const Home: NextPage = () => {
       <div className="container mx-auto">
         <Navbar />
         <main className="mt-4">
-          <div className="grid grid-cols-12 my-5">
-            <div className="col-span-8">
+          <div className="grid grid-cols-12 my-5 transition-all">
+            <div
+              className={
+                status === 'authenticated'
+                  ? 'col-span-8'
+                  : 'col-span-12 place-items-center'
+              }
+            >
               <div className="flex flex-wrap gap-4">
                 {loading ? (
                   <Loader />
@@ -33,9 +41,11 @@ const Home: NextPage = () => {
                 )}
               </div>
             </div>
-            <div className="col-span-4 relative">
-              <CreateAuctionForm />
-            </div>
+            {status === 'authenticated' && (
+              <div className="col-span-4 relative">
+                <CreateAuctionForm />
+              </div>
+            )}
           </div>
         </main>
       </div>
